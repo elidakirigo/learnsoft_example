@@ -22,3 +22,11 @@ php artisan infyom:rollback Employee scaffold --prefix=admin
 name string text
 email, string,50 email
 date_of_birth date date
+
+# add yajira
+composer require yajra/laravel-datatables-oracle:^10.0
+composer require yajra/laravel-datatables-buttons:^9.0 yajra/laravel-datatables-html:^9.0
+php artisan vendor:publish --tag=datatables-buttons --force
+
+# add datatables
+php artisan infyom.publish:tables datatables
