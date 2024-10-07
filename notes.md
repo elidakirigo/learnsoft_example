@@ -1,0 +1,19 @@
+composer require laravel/ui
+scafolding - php artisan ui bootstrap --auth
+
+php artisan serve
+
+https://infyom.com/open-source/laravelgenerator/docs/10.0/publish-layout
+
+Auth::routes(['verify' => true]);
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+recording - https://obsproject.com/
+
+employee - first_name, middle_name, surname, email, phone_number, role_id, basic_salary, gender, marital_status, nationality, department_id, physical_address, disability_status, employment_status, date_of_birth,
+
+
+php artisan infyom:scaffold Employee --prefix=admin
+
+php artisan infyom:rollback Employee scaffold --prefix=admin
