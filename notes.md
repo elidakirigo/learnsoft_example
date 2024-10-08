@@ -38,3 +38,15 @@ https://www.allphptricks.com/laravel-user-registration-with-email-verification/
 MPESA intergration
 CRM
 WEB DOCUMENT VIEWER 
+
+https://github.com/Fortune-dot/mpesa-php-sdk
+
+php artisan make:controller MpesaController
+
+https://youtu.be/mpP8d3QEb2I?si=3n7pftQAsxbW3eks
+
+https://youtu.be/qTxnsNYWTKo?si=o8NcJekCFUAfiEuu
+
+https://github.com/Iankumu/mpesa
+
+https://youtu.be/h1kPPA-4gi8?si=L7ugM3bIg2KeDixP
