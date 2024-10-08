@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Auth\LoginRegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +31,7 @@ Route::resource('admin/employees', App\Http\Controllers\Admin\EmployeeController
         'create' => 'admin.employees.create',
         'edit' => 'admin.employees.edit'
     ]);
+
+Route::controller(VerificationController::class)->group(function() { Route::get('/email/verify', 'notice')->name('verification.notice'); Route::get('/email/verify/{id}/{hash}', 'verify')->name('verification.verify') ;
+Route::post('/email/resend', 'resend')->name('verification.resend');
+});

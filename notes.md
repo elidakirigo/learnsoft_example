@@ -30,3 +30,11 @@ php artisan vendor:publish --tag=datatables-buttons --force
 
 # add datatables
 php artisan infyom.publish:tables datatables
+
+
+https://www.allphptricks.com/laravel-user-registration-with-email-verification/
+
+-----------------------------------------------------------
+MPESA intergration
+CRM
+WEB DOCUMENT VIEWER 
