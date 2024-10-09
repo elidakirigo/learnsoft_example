@@ -22,5 +22,7 @@ class PayController extends Controller
         $Remarks='Remarks';
 
 $stkPushSimulation=$mpesa->STKPushSimulation($BusinessShortCode, $LipaNaMpesaPasskey, $TransactionType, $Amount, $PartyA, $PartyB, $PhoneNumber, $CallBackURL, $AccountReference, $TransactionDesc, $Remarks);
+
+dd($stkPushSimulation);
    }
 }
