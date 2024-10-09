@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\MPESAB2CController;
+use App\Http\Controllers\MPESAC2BController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MpesaSTKPUSHController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::post('/v1/b2c/simulate', [MPESAB2CController::class, 'simulate']);
+
+Route::post('register-urls', [MPESAC2BController::class, 'registerURLS']);
+
+Route::post('/v1/mpesatest/stk/push', [MpesaSTKPUSHController::class, 'STKPush']);
 
 Route::get('/', function () {
     return view('welcome');
