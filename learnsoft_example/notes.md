@@ -30,3 +30,5 @@ php artisan vendor:publish --tag=datatables-buttons --force
 
 # add datatables
 php artisan infyom.publish:tables datatables
+
+https://youtu.be/qTxnsNYWTKo?si=qUOTtZ6hAK63rJ3Q

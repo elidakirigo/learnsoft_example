@@ -4,6 +4,8 @@ use App\Http\Controllers\MPESAB2CController;
 use App\Http\Controllers\MPESAC2BController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MpesaSTKPUSHController;
+use App\Http\Controllers\PayController;
+use App\Http\Controllers\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +16,10 @@ use App\Http\Controllers\MpesaSTKPUSHController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::controller(PaymentController::class)->prefix('payments')->as('payments')->group(function(){
+    Route::get('/token','token')->name('token');
+});
 
 Route::post('/v1/b2c/simulate', [MPESAB2CController::class, 'simulate']);
 
@@ -28,6 +34,9 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/pay', [PayController::class, 'stk']);
+
 Route::resource('admin/employees', App\Http\Controllers\Admin\EmployeeController::class)
     ->names([
         'index' => 'admin.employees.index',

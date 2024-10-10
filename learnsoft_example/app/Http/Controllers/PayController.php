@@ -10,13 +10,13 @@ class PayController extends Controller
    public function stk(){
         $mpesa= new \Safaricom\Mpesa\Mpesa();
         $BusinessShortCode='174379';
-        $LipaNaMpesaPasskey='';
+        $LipaNaMpesaPasskey='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
         $TransactionType='CustomerPaybillOnline';
         $Amount='1';
-        $PartyA='254720467320';
-        $PartyB='174379';
-        $PhoneNumber='254720467320';
-        $CallBackURL='';
+        $PartyA='600990';
+        $PartyB='600000';
+        $PhoneNumber='2547020467320';
+        $CallBackURL='http://localhost:8000/mpesa/cofirmation/';
         $AccountReference='AccountReference';
         $TransactionDesc='TransactionDesc';
         $Remarks='Remarks';
