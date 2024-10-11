@@ -11,8 +11,8 @@ use App\Models\C2brequest;
 class PaymentController extends Controller
 {
     public function token(){
-        $consumerKey=''; //your  consumer key
-        $consumerSecret='';//your  consumer secret
+        $consumerKey='gvfUxL4Bujlo6CB2nTyW97jHspJWo3OGlutrGDAb0jeapHTl';
+        $consumerSecret='gEqyGeM0Z1wD3WEXDeVW9pDv7kzZf8PQkRe3muGZT8OH3HXwlyhIOJjec1UMKGDD';
         $url='https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 
         $response=Http::withBasicAuth($consumerKey,$consumerSecret)->get($url);
@@ -28,9 +28,9 @@ class PaymentController extends Controller
         $password=base64_encode($BusinessShortCode.$PassKey.$Timestamp);
         $TransactionType='CustomerPayBillOnline';
         $Amount=1;
-        $PartyA=254712xxx518;
+        $PartyA=254720467320;
         $PartyB=174379;
-        $PhoneNumber=254712xxx518;
+        $PhoneNumber=254720467320;
         $CallbackUrl='https://142f-102-166-158-51.eu.ngrok.io/payments/stkcallback';
         $AccountReference='Coders base';
         $TransactionDesc='payment for goods';
@@ -107,7 +107,7 @@ class PaymentController extends Controller
         $CheckoutRequestID=$response->Body->stkCallback->CheckoutRequestID;
         $ResultDesc=$response->Body->stkCallback->ResultDesc;
         $payment=Stkrequest::where('CheckoutRequestID',$CheckoutRequestID)->firstOrfail();
-        
+
         $payment->ResultDesc=$ResultDesc;
         $payment->status='Failed';
         $payment->save();
@@ -181,12 +181,12 @@ class PaymentController extends Controller
         Storage::disk('local')->put('validation.txt',$data);
 
         //validation logic
-        
+
         return response()->json([
             'ResultCode'=>0,
             'ResultDesc'=>'Accepted'
         ]);
-        
+
         /*
         return response()->json([
             'ResultCode'=>'C2B00011',
@@ -235,13 +235,13 @@ class PaymentController extends Controller
             'ResultCode'=>0,
             'ResultDesc'=>'Accepted'
         ]);
-        
+
     }
 
     public function qrcode(){
         $consumerKey=\config('safaricom.consumer_key');
         $consumerSecret=\config('safaricom.consumer_secret');
-        
+
         $authUrl='https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 
         $request=Http::withBasicAuth($consumerKey,$consumerSecret)->get($authUrl);

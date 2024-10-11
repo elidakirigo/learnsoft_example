@@ -14,7 +14,7 @@ class PaymentController extends Controller
 
         $response=Http::withBasicAuth($consumerKey,$consumerSecret)->get($url);
 
-        return $response;
+        return $response['access_token'];
 
     }
 }

@@ -1,0 +1,60 @@
+/* welcome */
+body{
+    background-color: rgb(129, 165, 129);
+}
+.links {
+    margin-left: 885px; 
+}
+.welcomeimage {
+    text-align: center; 
+    margin-top: 50px; 
+}
+
+.home-link {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    font-size: 40px;
+    text-decoration: none; 
+    color: blue; 
+}
+.login-link {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    font-size: 40px;
+    text-decoration: none; 
+    color: blue; 
+}
+.register-link {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    font-size: 40px;
+    margin-right: 150px;
+    text-decoration: none; 
+    color: blue; 
+}
+
+
+/* login */
+
+.login-page {
+    background-color: rgb(129, 165, 129); 
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* register */
+.register-page{
+    background-color: rgb(129, 165, 129); 
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 

@@ -17,9 +17,17 @@ use App\Http\Controllers\PaymentController;
 |
 */
 
-Route::controller(PaymentController::class)->prefix('payments')->as('payments')->group(function(){
-    Route::get('/token','token')->name('token');
-});
+// Route::controller(PaymentController::class)->prefix('payments')->as('payments')->group(function(){
+//     Route::get('/token','token')->name('token');
+// });
+
+Route::controller(PaymentController::class)
+    ->prefix('payments')
+    ->as('payments.')
+    ->group(function () {
+        Route::get('/initiatepush', 'initiateStkPush')->name('initiatepush');
+        Route::get('/token', 'token')->name('token');
+    });
 
 Route::post('/v1/b2c/simulate', [MPESAB2CController::class, 'simulate']);
 
